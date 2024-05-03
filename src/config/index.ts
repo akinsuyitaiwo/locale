@@ -8,6 +8,7 @@ const config = {
 	DB_NAME: process.env.DB_NAME as string,
 	DB_USERNAME: process.env.DB_USERNAME as string,
 	DB_PASSWORD: process.env.DB_PASSWORD as string,
+	JWT_SECRET: process.env.JWT_SECRET as string
 	
 };
 

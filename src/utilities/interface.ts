@@ -12,3 +12,8 @@ export interface ICustomRequest{
     query: object
     path: object
 }
+
+export interface ISignIn {
+    email: string;
+    password: string;
+}
