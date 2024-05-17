@@ -4,6 +4,7 @@ import bodyparser from "body-parser"
 import config from "../config/index"
 import { reqLogger } from "../utilities/reqLogger"
 import router from "../routes/index"
+import {ICustomRequest} from "../utilities/interface"
 
 const app = express()
 
@@ -14,6 +15,11 @@ app.use(cors())
 app.use(bodyparser.json())
 app.use(reqLogger);
 app.use("/api", router)
+declare global {
+	namespace Express {
+	  interface Request extends ICustomRequest { }
+	}
+  }
 
 app.use("/", (req, res) => {
     res.send( "Welcome to Locale")
